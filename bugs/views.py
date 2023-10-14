@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-
+from django.urls import reverse_lazy
 from django.http.response import HttpResponse
 
 from bugs.forms import registerbugs
@@ -32,16 +32,6 @@ def register(request):
 	context['form']= form
 	return render(request, "bugs/register.html", context)
 
-
-# def display(request):
-   # data = Bugs.objects.all()
-    #return render(request,'bugs/index.html',{'datas': data })
-
-# def info(request,data_id):
-    #datar = Bugs.objects.get(pk = data_id)
-   # datar = Bugs._meta.get_fields(data_id) 
-    
-    #return render(request,'bugs/info.html',{'datarrr': datar })
 
 # this class will create the table just like how we create forms
 class SimpleTable(tables.Table):
